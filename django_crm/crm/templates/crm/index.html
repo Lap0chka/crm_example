@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-xxl bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar & Hero Start -->
+    {% include 'crm/includes/navbar.html' %}
+    <!-- Navbar & Hero End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="feature-item bg-light rounded text-center p-5">
+                        <i class="fa fa-4x fa-edit text-primary mb-4"></i>
+                        <h5 class="mb-3">Fully Customizable</h5>
+                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
+                            diam sed stet.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="feature-item bg-light rounded text-center p-5">
+                        <i class="fa fa-4x fa-sync text-primary mb-4"></i>
+                        <h5 class="mb-3">App Integration</h5>
+                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
+                            diam sed stet.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="feature-item bg-light rounded text-center p-5">
+                        <i class="fa fa-4x fa-draw-polygon text-primary mb-4"></i>
+                        <h5 class="mb-3">Drag And Drop</h5>
+                        <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
+                            diam sed stet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    <!-- About Start -->
+    {% include 'crm/includes/about.html' %}
+    <!-- About End -->
+
+
+    <!-- Overview Start -->
+    {%include 'crm/includes/overview.html'%}
+    <!-- Overview End -->
+
+
+    <!-- Advanced Feature Start -->
+    {%include 'crm/includes/features.html'%}
+    <!-- Advanced Feature End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-xxl bg-primary my-6 py-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <i class="fa fa-cogs fa-3x text-white mb-3"></i>
+                    <h1 class="mb-2" data-toggle="counter-up">7264</h1>
+                    <p class="text-white mb-0">Active Install</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                    <i class="fa fa-users fa-3x text-white mb-3"></i>
+                    <h1 class="mb-2" data-toggle="counter-up">6521</h1>
+                    <p class="text-white mb-0">Satisfied Clients</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <i class="fa fa-certificate fa-3x text-white mb-3"></i>
+                    <h1 class="mb-2" data-toggle="counter-up">729</h1>
+                    <p class="text-white mb-0">Award Wins</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                    <i class="fa fa-quote-left fa-3x text-white mb-3"></i>
+                    <h1 class="mb-2" data-toggle="counter-up">5917</h1>
+                    <p class="text-white mb-0">Clients Reviews</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+    <!-- Process Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="img-fluid rounded" src="{% static 'img/process.jpg' %}">
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <h1 class="mb-4">Three Simple Steps To Start Working With</h1>
+                    <p class="mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat
+                        ipsum et lorem et sit, sed stet no labore lorem sit clita duo justo eirmod magna dolore erat
+                        amet</p>
+                    <ul class="process mb-0">
+                        <li>
+                            <span><i class="fa fa-cog"></i></span>
+                            <div>
+                                <h5>Install the Software</h5>
+                                <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
+                                    eos erat ipsum et lorem et sit</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-address-card"></i></span>
+                            <div>
+                                <h5>Setup Your Profile</h5>
+                                <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et
+                                    sit, sed stet lorem sit clita duo</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-check"></i></span>
+                            <div>
+                                <h5>Enjoy The Features</h5>
+                                <p>Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
+                                    clita duo justo magna</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Process End -->
+
+
+    <!-- Pricing Start -->
+   {%include 'crm/includes/pricing.html'%}
+    <!-- Pricing End -->
+
+
+    <!-- Testimonial Start -->
+    {%include 'crm/includes/testimonial.html'%}
+    <!-- Testimonial End -->
+
+
+    <!-- Contact Start -->
+    {%include 'crm/includes/contact.html'%}
+    <!-- Contact End -->
+
+
+    {% include 'crm/includes/footer.html'%}
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+</div>
+{% endblock  %}
