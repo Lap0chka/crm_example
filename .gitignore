@@ -250,3 +250,4 @@ media/
 *.db
 *.pid
 migrations/
+/django_crm/static/scss/

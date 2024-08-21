@@ -1,29 +1,17 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% block title %}Your CRM{%endblock%}</title>
     {%include 'includes/head.html'%}
-{% block css %}
-<!-- Libraries Stylesheet -->
-<link href="{% static 'lib/animate/animate.min.css'%}" rel="stylesheet">
-{%endblock%}
 </head>
-
 <body>
 {% block content %}
 
 {% endblock %}
 
-{% include 'includes/jslib.html' %}
-{%block jslib%}
-<script src="{% static 'lib/wow/wow.min.js' %}"></script>
-<script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
-{% endblock %}
-<!-- Template Javascript -->
-<script src="{% static 'js/main.js'%}"></script>
 
+{% include 'includes/jslib.html' %}
+<!-- Template Javascript -->
 </body>
 
 </html>
