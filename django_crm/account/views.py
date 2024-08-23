@@ -1,11 +1,13 @@
 from django.contrib import messages
 
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.contrib.auth.forms import PasswordResetForm
 
-from account.forms import LoginForm, RegisterForm
+from django.contrib.auth.models import User
+from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetView
+from django.shortcuts import render, redirect
+from django_email_verification import send_email
+from account.forms import LoginForm, RegisterForm, SetPasswordResetForm, PasswordResetEmailForm
 
 
 def dashboard(request):
@@ -54,9 +56,9 @@ def register_user(request):
             email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password1')
             user = User.objects.create_user(username, email, password)
-            # send_email
+            send_email(user)
             messages.success(request, 'Account was created successfully.')
-            return redirect('account:login')
+            return redirect('/account/email-verification-sent/')
         else:
             messages.error(request, 'Invalid form submission.')
             return redirect('account:register')
@@ -64,3 +66,15 @@ def register_user(request):
         form = RegisterForm()
 
     return render(request, 'account/sign/sign_up.html', {'form': form})
+
+
+class PasswordResetConfirmationView(PasswordResetConfirmView):
+    form_class = SetPasswordResetForm
+
+class PasswordResetEmailView(PasswordResetView):
+    form_class = PasswordResetEmailForm
+
+    def form_invalid(self, form):
+        for error in form.errors.values():
+            messages.error(self.request, error)
+        return redirect('account:password_reset')
