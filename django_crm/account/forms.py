@@ -108,3 +108,6 @@ class PasswordResetEmailForm(PasswordResetForm):
         if User.objects.filter(email=email).exists():
             return email
         raise forms.ValidationError("This email isn't exist")
+
+
+

@@ -1,6 +1,7 @@
 from django.contrib import messages
 
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordResetForm
 
 from django.contrib.auth.models import User
@@ -78,3 +79,14 @@ class PasswordResetEmailView(PasswordResetView):
         for error in form.errors.values():
             messages.error(self.request, error)
         return redirect('account:password_reset')
+
+
+# @login_required
+# def db_download(request):
+#     if request.method == 'POST':
+#         form = DbDownloaderForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             pass
+#     else:
+#         form = DbDownloaderForm()
+#     return render(request, 'account/dashboard/download/download_db.html', {'form': form})

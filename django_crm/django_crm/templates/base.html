@@ -1,17 +1,16 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {%include 'includes/head.html'%}
+    {% include 'includes/head.html' %}
 </head>
+
 <body>
 {% include 'includes/messages.html' %}
-{% block content %}
+{%block content%}
 
-{% endblock %}
+{%endblock%}
+{% include 'includes/js.html' %}
 
-{% include 'includes/jslib.html' %}
-<!-- Template Javascript -->
 </body>
 
 </html>

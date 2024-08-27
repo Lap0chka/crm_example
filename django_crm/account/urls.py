@@ -39,4 +39,5 @@ urlpatterns = [
          name='password_reset_complete'),
     # Dashboard
     path('dashboard/', views.dashboard, name='dashboard'),
+
 ]
